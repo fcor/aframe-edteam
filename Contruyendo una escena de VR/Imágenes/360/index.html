@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Scene - A-Frame</title>
+    <meta name="description" content="Basic Scene - A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="aframe" src="aframe.png" />
+        <img id="desert" src="360.jpg" />
+      </a-assets>
+
+      <a-image src="#aframe" position="0 1.5 -2" width="1.5" height="1.345"></a-image>
+      <a-sky src="#desert"></a-sky>
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Scene - A-Frame</title>
+    <meta name="description" content="Basic Scene - A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="grass" src="grass.jpg" />
+        <img id="wall" src="wall.jpg" />
+      </a-assets>
+
+      <a-box src="#wall" position="0 1.5 -5" width="6" depth="1" height="4"></a-box>
+
+      <a-plane src="#grass" width="30" height="30" repeat="10 10" rotation="-90 0 0"></a-plane>
+    </a-scene>
+  </body>
+</html>
