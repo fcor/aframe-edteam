@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Scene - A-Frame</title>
+    <meta name="description" content="Basic Scene - A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box
+        color="#4CC3D9"
+        position="0 0.5 -4"
+        rotation="0 45 0"
+        animation="property: rotation; from: 0 0 0; to: 0 360 0; dur: 2000; loop: true; easing: linear"
+        animation__scale="property: scale; from: 1 1 1; to: 3 3 3; dur: 2000; loop: true; dir: alternate"
+      ></a-box>
+
+      <a-entity position="0 0.5 -4" animation="property: rotation; from: 0 0 0; to: 0 -360 0; dur: 4000; loop: true; easing: linear">
+        <a-sphere 
+          position="0 0 -5"
+          radius="0.3"
+          color="red"
+          animation="property: material.color; from: #FF0000; to: #00FF00; dur: 4000; loop: true; dir: alternate"
+          ></a-sphere>
+      </a-entity>
+
+      <a-plane
+        color="#7BC8A4"
+        position="0 0 -4"
+        rotation="-90 0 0"
+        width="4"
+        height="4"
+      ></a-plane>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>
