@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Primitives - A-Frame</title>
+    <meta name="description" content="Primitives - A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene stats>
+
+      <a-plane
+        position="0 0 -8"
+        rotation="-90 0 0"
+        width="8"
+        height="4"
+        color="peru"
+      ></a-plane>
+
+      <a-torus
+        position="0 0 -8"
+        color="#213041"
+        arc="360"
+        radius="4.5"
+        radius-tubular="0.1"
+      ></a-torus>
+
+      <a-torus-knot
+        position="0 2 -8"
+        color="#B84A39"
+        arc="180"
+        p="2"
+        q="7"
+        radius="1"
+        radius-tubular="0.1"
+      ></a-torus-knot>
+
+      <a-octahedron
+        position="-2 1 -6"
+        rotation="0 45 0"
+        color="#FF926B"
+        radius="1"
+      ></a-octahedron>
+
+      <a-cone
+        position="2 1 -6"
+        rotation="-90 25 0"
+        color="green"
+        radius-bottom="0"
+        radius-top="0.5"
+      ></a-cone>
+
+      <a-sky color="skyblue"></a-sky>
+      
+    </a-scene>
+  </body>
+</html>
