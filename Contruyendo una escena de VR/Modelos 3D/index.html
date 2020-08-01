@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Scene - A-Frame</title>
+    <meta name="description" content="Basic Scene - A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="grass" src="grass.jpg" />
+        <a-asset-item
+          id="bulbasaur-obj"
+          src="models/bulbasaur/bulbasaur-pokemon-go.obj"
+        ></a-asset-item>
+        <a-asset-item
+          id="bulbasaur-mtl"
+          src="models/bulbasaur/bulbasaur-pokemon-go.mtl"
+        ></a-asset-item>
+        <a-asset-item 
+        id="tree"
+        src="models/tree/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item 
+        id="house"
+        src="models/house/scene.gltf"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-entity
+        gltf-model="#house"
+        position="4 0 -7"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+
+      <a-entity
+        obj-model="obj: #bulbasaur-obj; mtl: #bulbasaur-mtl"
+        position="-2 0 -7"
+        rotation="0 90 0"
+        scale="0.15 0.15 0.15"
+      >
+      </a-entity>
+
+      <a-plane
+        src="#grass"
+        width="30"
+        height="30"
+        repeat="10 10"
+        rotation="-90 0 0"
+      ></a-plane>
+
+      <a-sky color="skyblue"></a-sky>
+    </a-scene>
+  </body>
+</html>
