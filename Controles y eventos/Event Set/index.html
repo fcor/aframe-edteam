@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Scene - A-Frame</title>
+    <meta name="description" content="Basic Scene - A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box
+        color="#4CC3D9"
+        position="-1 0.5 -3"
+        rotation="0 45 0"
+        class="clickable"
+        event-set__enter="_event: mouseenter; material.color: red"
+        event-set__leave="_event: mouseleave; material.color: #4CC3D9"
+      ></a-box>
+      <a-cylinder
+        color="#FFC65D"
+        position="1 0.75 -3"
+        radius="0.5"
+        height="1.5"
+        class="clickable"
+        event-set__click="_event: click; material.color: green; position: 2 0.75 -3"
+      >
+      </a-cylinder>
+      <a-sphere
+        color="#EF2D5E"
+        position="0 1.25 -5"
+        radius="1.25"
+        class="clickable"
+        event-set="_event: click; _target: #text; visible: true"
+      >
+        <a-text
+          id="text"
+          value="You clicked the sphere!"
+          color="black"
+          visible="false"
+          position="0 1.5 0"
+        ></a-text>
+      </a-sphere>
+      <a-plane
+        color="#7BC8A4"
+        position="0 0 -4"
+        rotation="-90 0 0"
+        width="4"
+        height="4"
+      ></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+
+      <a-entity position="0 1.6 0" camera look-controls wasd-controls>
+        <a-cursor
+          fuse="true"
+          raycaster="objects: .clickable"
+          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
+          animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+        ></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
