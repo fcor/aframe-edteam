@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Scene - A-Frame</title>
+    <meta name="description" content="Basic Scene - A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item
+          id="bulbasaur-obj"
+          src="models/bulbasaur/bulbasaur-pokemon-go.obj"
+        ></a-asset-item>
+        <a-asset-item
+          id="bulbasaur-mtl"
+          src="models/bulbasaur/bulbasaur-pokemon-go.mtl"
+        ></a-asset-item>
+        <a-asset-item id="house" src="models/house/scene.gltf"></a-asset-item>
+        <a-asset-item id="trump" src="models/trump/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-entity environment="preset: forest"></a-entity>
+
+      <a-entity
+        gltf-model="#house"
+        position="4 0 -7"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#trump"
+        position="-4 0 -7"
+        scale="1 1 1"
+        animation-mixer
+      ></a-entity>
+
+      <a-entity
+        obj-model="obj: #bulbasaur-obj; mtl: #bulbasaur-mtl"
+        position="-2 0 -7"
+        rotation="0 90 0"
+        scale="0.15 0.15 0.15"
+      >
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
