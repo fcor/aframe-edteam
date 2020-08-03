@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Scene - A-Frame</title>
+    <meta name="description" content="Basic Scene - A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box
+        static-body
+        color="#4CC3D9"
+        position="0 0.5 -3"
+        rotation="0 45 0"
+        id="box"
+      ></a-box>
+
+      <a-cylinder
+        color="#FFC65D"
+        position="1.25 0.75 -3"
+        radius="0.5"
+        height="1.5"
+        dynamic-body
+        id="Cylinder-1"
+        apply-force
+      ></a-cylinder>
+
+      <a-cylinder
+        color="#FFC65D"
+        position="-1.25 0.75 -3"
+        radius="0.5"
+        height="1.5"
+        dynamic-body
+        id="Cylinder-2"
+        apply-force
+      ></a-cylinder>
+
+      <a-cylinder
+        color="#FFC65D"
+        position="0.5 6 -3"
+        radius="0.5"
+        height="1.5"
+        dynamic-body
+        id="Cylinder-3"
+        apply-force
+      >
+      </a-cylinder>
+
+      <a-sphere
+        mass="10"
+        dynamic-body
+        color="red"
+        position="0 11 -3"
+        radius="1"
+        id="sphere-red"
+        collision-detector
+        apply-force
+      ></a-sphere>
+
+      <a-sphere
+        mass="1"
+        dynamic-body
+        color="green"
+        position="-2.5 11 -3"
+        radius="1"
+        id="sphere-green"
+      ></a-sphere>
+
+      <a-sphere
+        dynamic-body
+        mass="50"
+        color="orange"
+        position="2.5 11 -3"
+        radius="1"
+        id="sphere-organge"
+      ></a-sphere>
+
+      <a-plane
+        color="#7BC8A4"
+        position="0 0 -4"
+        rotation="-90 0 0"
+        width="100"
+        height="100"
+        static-body
+        id="plane"
+      ></a-plane>
+
+      <a-entity camera look-controls wasd-controls position="0 1.6 10">
+        <a-cursor></a-cursor>
+      </a-entity>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>
