@@ -1,6 +1,5 @@
-AFRAME.registerComponent('change-color-on-hover', {
+AFRAME.registerComponent('change-color', {
     init: function () {
-      var data = this.data;
       var el = this.el;  // <a-box>
       var defaultColor = el.getAttribute('material').color;
 
