@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Scene - A-Frame</title>
+    <meta name="description" content="Basic Scene - A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img src="grass.jpg" id="grass" />
+      </a-assets>
+
+      <a-box
+        color="#4CC3D9"
+        position="-2 1 -5"
+        animation="property: rotation; from: 0 0 0; to: 0 360 0; dur: 2000; loop: true; easing: linear"
+        shadow="cast: true"
+      ></a-box>
+
+      <a-box
+        color="#4CC3D9"
+        position="2 1 -5"
+        animation="property: rotation; from: 0 0 0; to: 0 360 0; dur: 2000; loop: true; easing: linear"
+        animation__pos="property: position; from: 2 1 -5; to: 2 1 -8; dur: 3000; loop: true; dir: alternate"
+        shadow="cast: true"
+        id="my-box"
+      ></a-box>
+
+      <a-box
+        color="blue"
+        height="5"
+        width="6"
+        depth="0.5"
+        position="-3 2.5 -3"
+        rotation="0 90 0"
+        shadow="receive: true"
+      ></a-box>
+
+      <a-box
+        color="lightgray"
+        height="3"
+        width="3"
+        depth="0.5"
+        position="-1.2 5 -3"
+        rotation="-90 0 0"
+        shadow="receive: true"
+      ></a-box>
+
+      <a-plane
+        src="#grass"
+        position="0 0 0"
+        rotation="-90 0 0"
+        width="30"
+        height="30"
+        repeat="20 20"
+        shadow="receive: true"
+      ></a-plane>
+      <a-sky color="gray"></a-sky>
+
+      <!-- Lights -->
+      <a-entity
+        light="type: ambient; color: #BBB; intensity: 0.2; castShadow: true"
+      ></a-entity>
+
+      <!-- <a-entity
+        light="type: directional; color: #FFF; intensity: 0.6;"
+        position="1 1 0"
+      ></a-entity> -->
+
+      <a-entity
+        light="type: point; intensity: 0.8; distance: 10; castShadow: true"
+        position="0 1 -5"
+      ></a-entity>
+
+      <a-entity
+        light="type: spot; target: #my-box; color: #C40C40; angle: 30; penumbra: 0.2; castShadow: true"
+        position="-1 2 -4"
+      ></a-entity>
+
+    </a-scene>
+  </body>
+</html>
