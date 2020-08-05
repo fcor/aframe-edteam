@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AR Mode</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script>
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="hooh" src="./model/scene.glb"></a-asset-item>
+      </a-assets>
+
+      <a-entity position="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 5000">
+        <a-entity
+          gltf-model="#hooh"
+          position="0 0 -10"
+          rotation="0 -90 0"
+          animation-mixer
+          scale="0.01 0.01 0.01"
+          id="pokemon"
+        >
+        </a-entity>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
